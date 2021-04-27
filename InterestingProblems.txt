@@ -1,0 +1,38 @@
+Interesting problems
+=============================================== Arrays and Strings ===============================================
+https://www.hackerrank.com/challenges/minimum-swaps-2/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=arrays
+deceptively complex
+
+https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+https://www.hackerrank.com/challenges/drawing-book/problem
+https://www.hackerrank.com/challenges/electronics-shop/problem
+https://www.hackerrank.com/challenges/big-sorting/problem
+https://www.hackerrank.com/challenges/reduced-string/problem
+** See solution on eclipse
+
+https://www.hackerrank.com/challenges/strong-password/problem
+** For seeing the kinds of functions that Charachter class in String offers.
+
+https://www.hackerrank.com/challenges/the-power-sum/problem
+
+https://www.hackerrank.com/challenges/beautiful-binary-string/problem
+
+https://www.hackerrank.com/challenges/palindrome-index/problem
+(see solution in eclipse)
+
+https://www.hackerrank.com/challenges/anagram/problem
+
+https://www.hackerrank.com/challenges/string-construction/problem
+#deceptively complicated
+
+https://www.hackerrank.com/challenges/count-triplets-1/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=dictionaries-hashmaps
+
+
+https://www.hackerrank.com/challenges/sherlock-and-valid-string/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=strings
+#my very bad solution, see if you can make it better
+
+
+######################## linkied list ##################################
+https://www.hackerrank.com/challenges/reverse-a-doubly-linked-list/problem?h_l=interview&playlist_slugs%5B%5D=interview-preparation-kit&playlist_slugs%5B%5D=linked-lists
+
+https://leetcode.com/problems/palindrome-linked-list/
