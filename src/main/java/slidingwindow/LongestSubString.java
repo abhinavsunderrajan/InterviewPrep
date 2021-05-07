@@ -1,7 +1,7 @@
 package slidingwindow;
 
 /**
- * Notice that sliding windows follow similar patterns of constructing a ruuning
+ * Notice that sliding windows follow similar patterns of constructing a running
  * sum or sequence.
  * 
  * @author 746310
