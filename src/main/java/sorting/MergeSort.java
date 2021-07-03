@@ -2,6 +2,12 @@ package sorting;
 
 import java.util.Arrays;
 
+/**
+ * Based on Abdul Bari's lecture
+ * 
+ * @author 746310
+ *
+ */
 public class MergeSort {
 
     public static void main(String[] args) {

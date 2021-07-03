@@ -4,12 +4,12 @@ import java.util.Arrays;
 
 /**
  * {@link https://www.geeksforgeeks.org/understanding-the-coin-change-problem-with-dynamic-programming/}
- * Number of ways to make change.
+ * Number of ways to make change for an amount.
  * 
  * @author 746310
  *
  */
-public class CoinchangeProblem {
+public class CoinsNumfWaysToMakeAmount {
 
     private static final int TOTAL_AMOUNT = 11;
     private static final int COINS[] = { 1, 2, 5 };
@@ -65,16 +65,16 @@ public class CoinchangeProblem {
 	dpArr[0] = 1;
 
 	// Go through all of the coins
-	for (int i = 0; i < COINS.length; i++) {
+	for (int coin : COINS) {
 	    // Make a comparison to each index value
 	    // of ways with the coin value.
 	    for (int amount = 1; amount < dpArr.length; amount++) {
 		// if coin is greater than amount you cannot do nothing.
-		if (COINS[i] <= amount) {
+		if (coin <= amount) {
 		    // Update the ways array
 		    // for example if amount is 6 and coin considered is 5
 		    // numWays for 6 = numWays for 5 + numWays for 1
-		    dpArr[amount] += dpArr[(amount - COINS[i])];
+		    dpArr[amount] += dpArr[(amount - coin)];
 		}
 	    }
 	}

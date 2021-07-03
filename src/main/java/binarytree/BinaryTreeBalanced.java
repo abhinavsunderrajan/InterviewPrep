@@ -32,7 +32,7 @@ public class BinaryTreeBalanced {
     }
 
     private static int computeHeight(Node node) {
-	if (node == null || node.key == null)
+	if (node == null || node.val == null)
 	    return 0;
 	else {
 	    int hLeft = 1 + computeHeight(node.left);

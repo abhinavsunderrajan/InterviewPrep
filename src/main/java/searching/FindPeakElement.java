@@ -9,9 +9,9 @@ package searching;
 public class FindPeakElement {
 
     public static void main(String[] args) {
-	// int[] arr = { 1, 2, 4, 6, 3, 2 - 1, -9, -10, 0 };
+	int[] arr = { 1, 2, 4, 6, 3, 2 - 1, -9, -10, 0 };
 
-	int[] arr = { 1, 3 };
+	// int[] arr = { 1, 3 };
 	System.out.println(findPeakUtil(arr, 0, arr.length - 1, arr.length));
 
     }
@@ -22,7 +22,7 @@ public class FindPeakElement {
 	int mid = (high + low) / 2;
 
 	// Compare middle element with its
-	// neighbours (if neighbours exist)
+	// Neighbors (if neighbors exist)
 	if ((mid == 0 || arr[mid - 1] <= arr[mid]) && (mid == n - 1 || arr[mid + 1] <= arr[mid]))
 	    return mid;
 

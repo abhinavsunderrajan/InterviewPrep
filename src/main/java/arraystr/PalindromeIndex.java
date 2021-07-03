@@ -9,31 +9,26 @@ package arraystr;
 public class PalindromeIndex {
 
     public static void main(String[] args) {
-	String s = "axcca";
+	String s = "axca";
 	System.out.println(palindromeIndex(s));
-	System.out.println(palindromeIndexFast(s));
 
     }
 
-    static int palindromeIndexFast(String s) {
-	char[] arr = s.toCharArray();
-	int low = 0;
-	int high = arr.length - 1;
-	while (low < high) {
-	    if (arr[low] == arr[high]) {
-		low++;
-		high--;
-	    } else {
-		String sub1 = s.substring(low, high);
-		if (isPalin(sub1))
-		    return (high);
-		else
-		    return (low);
-	    }
+    static int palindromeIndex2(String s) {
+	int l = s.length();
+	int i, j, a, b;
+	for (i = 0, j = l - 1; i < l; i++, j--) {
+	    if (s.charAt(i) != s.charAt(j))
+		break;
 	}
+	if (i > j)
+	    return -1;
 
-	return -1;
-
+	for (a = i + 1, b = j; a < j && b > i + 1; a++, b--) {
+	    if (s.charAt(a) != s.charAt(b))
+		return j;
+	}
+	return i;
     }
 
     /**

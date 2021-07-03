@@ -17,7 +17,7 @@ public class SmallestGreaterThanTarget {
     public static void main(String[] args) {
 	char letters[] = { 'c', 'f', 'j' };
 	System.out.println(nextGreatestLetter(letters, 'd'));
-	System.out.println(asciiCodes(letters, 'd'));
+	System.out.println(asciiCodes(letters, 'z'));
 
     }
 

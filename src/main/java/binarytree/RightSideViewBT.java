@@ -43,7 +43,7 @@ public class RightSideViewBT {
 	    Stack<Integer> stack = new Stack<>();
 	    while (!q.isEmpty()) {
 		Node<Integer> node = q.poll();
-		stack.add(node.key);
+		stack.add(node.val);
 
 		if (node.left != null)
 		    temp.add(node.left);

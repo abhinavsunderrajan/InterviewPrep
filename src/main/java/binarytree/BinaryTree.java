@@ -17,17 +17,17 @@ public class BinaryTree<T> {
     public static class Node<T> {
 	Node<T> left;
 	Node<T> right;
-	T key;
+	T val;
 
 	Node(T key) {
-	    this.key = key;
+	    this.val = key;
 	}
 
 	@Override
 	public String toString() {
-	    if (key == null)
+	    if (val == null)
 		return null;
-	    return key.toString();
+	    return val.toString();
 	}
 
     }
@@ -40,7 +40,7 @@ public class BinaryTree<T> {
     public void traverseAndPrintDFS(Node<T> temp) {
 	if (temp == null)
 	    return;
-	System.out.print(temp.key + " ");
+	System.out.print(temp.val + " ");
 	traverseAndPrintDFS(temp.left);
 	traverseAndPrintDFS(temp.right);
 
@@ -62,7 +62,7 @@ public class BinaryTree<T> {
 		if (node.right != null)
 		    q.add(node.right);
 	    }
-	    System.out.print(node.key + " ");
+	    System.out.print(node.val + " ");
 
 	}
 
@@ -156,7 +156,7 @@ public class BinaryTree<T> {
 	while (!q.isEmpty()) {
 	    rightMostNode = q.poll();
 
-	    if (rightMostNode.key == key)
+	    if (rightMostNode.val == key)
 		key_node = rightMostNode;
 
 	    if (rightMostNode.left != null)
@@ -166,9 +166,9 @@ public class BinaryTree<T> {
 		q.add(rightMostNode.right);
 	}
 	if (rightMostNode != null) {
-	    T x = rightMostNode.key;
+	    T x = rightMostNode.val;
 	    deleteDeepest(rightMostNode);
-	    key_node.key = x;
+	    key_node.val = x;
 	}
     }
 

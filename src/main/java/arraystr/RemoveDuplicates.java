@@ -5,7 +5,7 @@ import java.util.Stack;
 public class RemoveDuplicates {
 
     public static void main(String[] args) {
-	String str = "quhxgrhqqaccxeprunllfieilbothbbmpsg";
+	String str = "quhxgrhqqqaccxeprunllfieilbothbbmpsg";
 	String ret = removeAdjacentDuplicates(str);
 	System.out.println(ret);
 	System.out.println(reverseWords("i.like.this.program.very.much"));

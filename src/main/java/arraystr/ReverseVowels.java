@@ -6,7 +6,7 @@ import java.util.Set;
 public class ReverseVowels {
 
     public static void main(String[] args) {
-	System.out.println(reverseVowels("aA"));
+	System.out.println(reverseVowels("adksjhefA"));
 
     }
 

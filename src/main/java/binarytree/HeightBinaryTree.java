@@ -23,7 +23,7 @@ public class HeightBinaryTree {
     }
 
     private static int computeHeight(Node node) {
-	if (node == null || node.key == null)
+	if (node == null || node.val == null)
 	    return 0;
 	else {
 	    int hLeft = 1 + computeHeight(node.left);
@@ -49,7 +49,7 @@ public class HeightBinaryTree {
 		if (node.right != null)
 		    q.add(node.right);
 		if (node.left == null && node.right == null)
-		    bottoms.add((Integer) node.key);
+		    bottoms.add((Integer) node.val);
 	    }
 	}
 

@@ -37,21 +37,21 @@ public class PathSumDFS {
 
     private static void dfs(Node<Integer> root, int targetSum, List<Integer> path, List<List<Integer>> paths) {
 
-	if (root == null || root.key == null) {
+	if (root == null || root.val == null) {
 	    return;
 	}
 
-	path.add(root.key);
-	if (root.key == targetSum && (root.left == null || root.left.key == null)
-		&& (root.right == null || root.right.key == null)) {
+	path.add(root.val);
+	if (root.val == targetSum && (root.left == null || root.left.val == null)
+		&& (root.right == null || root.right.val == null)) {
 	    paths.add(path);
 	    return;
 	}
 
 	// create a new path object every recursion call by adding adding the previous
 	// path.
-	dfs(root.left, (targetSum - root.key), new ArrayList<Integer>(path), paths);
-	dfs(root.right, (targetSum - root.key), new ArrayList<Integer>(path), paths);
+	dfs(root.left, (targetSum - root.val), new ArrayList<Integer>(path), paths);
+	dfs(root.right, (targetSum - root.val), new ArrayList<Integer>(path), paths);
 
     }
 

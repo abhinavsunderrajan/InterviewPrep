@@ -36,7 +36,6 @@ public class MaxSubArraySum {
 	    }
 	}
 
-	System.out.println(index1 + "," + index2);
 	int ans = 0;
 	for (int i = index1; i <= index2; i++)
 	    ans += nums[i];

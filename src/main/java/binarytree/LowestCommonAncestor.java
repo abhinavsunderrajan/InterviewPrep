@@ -22,7 +22,7 @@ public class LowestCommonAncestor {
 	// If either n1 or n2 matches with root's key, report
 	// the presence by returning root (Note that if a key is
 	// ancestor of other, then the ancestor key becomes LCA
-	if (node.key == n1 || node.key == n2)
+	if (node.val == n1 || node.val == n2)
 	    return node;
 
 	// Look for keys in left and right subtrees

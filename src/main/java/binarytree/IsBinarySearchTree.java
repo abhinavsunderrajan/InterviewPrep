@@ -4,6 +4,8 @@ import binarytree.BinaryTree.Node;
 
 public class IsBinarySearchTree {
 
+    private static Node<Integer> prev;
+
     public static void main(String args[]) {
 
 	int arr[] = { 8, 3, 10, 1, 6, 9, 14 };
@@ -16,25 +18,35 @@ public class IsBinarySearchTree {
 
     }
 
-    static boolean isBST(Node<Integer> root, Node<Integer> l, Node<Integer> r) {
+    /**
+     * See tushar roys video to understand
+     * {@linkplain https://www.youtube.com/watch?v=MILxfAbIhrE} Here you are
+     * assuming null as infinity.
+     * 
+     * @param testNode
+     * @param left
+     * @param right
+     * @return
+     */
+    static boolean isBST(Node<Integer> testNode, Node<Integer> left, Node<Integer> right) {
 	// Base condition
-	if (root == null)
+	if (testNode == null)
 	    return true;
 
 	// if left node exist then check it has
 	// correct data or not i.e. left node's data
 	// should be less than root's data
-	if (l != null && root.key <= l.key)
+	if (left != null && testNode.val <= left.val)
 	    return false;
 
 	// if right node exist then check it has
 	// correct data or not i.e. right node's data
 	// should be greater than root's data
-	if (r != null && root.key >= r.key)
+	if (right != null && testNode.val >= right.val)
 	    return false;
 
 	// check recursively for every node.
-	return isBST(root.left, l, root) && isBST(root.right, root, r);
+	return isBST(testNode.left, left, testNode) && isBST(testNode.right, testNode, right);
     }
 
 }

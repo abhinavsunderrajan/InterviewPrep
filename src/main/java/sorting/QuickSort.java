@@ -2,6 +2,12 @@ package sorting;
 
 import java.util.Arrays;
 
+/**
+ * {@link https://www.youtube.com/watch?v=7h1s2SojIRw&t=324s}
+ * 
+ * @author 746310
+ *
+ */
 public class QuickSort {
 
     public static void main(String[] args) {

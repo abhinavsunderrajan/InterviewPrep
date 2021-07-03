@@ -20,6 +20,11 @@ public class LRUCacheLinkedHashSet {
 	this.capacity = capacity;
     }
 
+    /**
+     * This is O(1) time.
+     * 
+     * @param key
+     */
     public void refer(int key) {
 	if (get(key) == false)
 	    put(key);
@@ -46,10 +51,6 @@ public class LRUCacheLinkedHashSet {
     // displays contents of cache in Reverse Order
     public void display() {
 	LinkedList<Integer> list = new LinkedList<>(cache);
-
-	// The descendingIterator() method of java.util.LinkedList
-	// class is used to return an iterator over the elements
-	// in this LinkedList in reverse sequential order
 	Iterator<Integer> itr = list.descendingIterator();
 
 	while (itr.hasNext())

@@ -4,7 +4,7 @@ public class CircularTour {
 
     public static void main(String args[]) {
 
-	int petrol[] = { 55, 52, 33, 100 };
+	int petrol[] = { 55, 52, 33, 121 };
 	int distance[] = { 77, 61, 40, 69 };
 	int start = tourNaiveSolution(petrol, distance);
 	System.out.println(start);

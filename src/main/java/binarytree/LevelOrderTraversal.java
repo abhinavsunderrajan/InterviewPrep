@@ -11,7 +11,7 @@ import binarytree.BinaryTree.Node;
  * @author 746310
  *
  */
-public class LevelOrderTravelsal {
+public class LevelOrderTraversal {
 
     public static void main(String[] args) {
 	BinaryTree<Integer> bt = new BinaryTree<>();
@@ -39,10 +39,10 @@ public class LevelOrderTravelsal {
 
 	    while (!q.isEmpty()) {
 		Node<Integer> node = q.poll();
-		bf.append(node.key + " ");
-		if (node.left != null && node.left.key != null)
+		bf.append(node.val + " ");
+		if (node.left != null && node.left.val != null)
 		    temp.add(node.left);
-		if (node.right != null && node.right.key != null)
+		if (node.right != null && node.right.val != null)
 		    temp.add(node.right);
 	    }
 	    System.out.println(bf.toString());
@@ -64,10 +64,10 @@ public class LevelOrderTravelsal {
 
 	    while (!q.isEmpty()) {
 		Node<Integer> node = q.poll();
-		bf.append(node.key + " ");
-		if (node.left != null && node.left.key != null)
+		bf.append(node.val + " ");
+		if (node.left != null && node.left.val != null)
 		    temp.add(node.left);
-		if (node.right != null && node.right.key != null)
+		if (node.right != null && node.right.val != null)
 		    temp.add(node.right);
 
 	    }

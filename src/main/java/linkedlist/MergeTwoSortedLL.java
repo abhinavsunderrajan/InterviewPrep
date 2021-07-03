@@ -32,16 +32,13 @@ public class MergeTwoSortedLL {
 
 	}
 
-	if (p1 == null) {
-	    while (p2 != null) {
-		ll3.add(p2.value);
-		p2 = p2.getNext();
-	    }
-	} else {
-	    while (p1 != null) {
-		ll3.add(p1.value);
-		p1 = p1.getNext();
-	    }
+	while (p2 != null) {
+	    ll3.add(p2.value);
+	    p2 = p2.getNext();
+	}
+	while (p1 != null) {
+	    ll3.add(p1.value);
+	    p1 = p1.getNext();
 	}
 	ll3.printListContents();
 

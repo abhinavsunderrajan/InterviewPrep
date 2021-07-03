@@ -55,6 +55,8 @@ public class MaxSubArrayProduct {
 
 	// traverse the given array
 	for (int num : arr) {
+	    // you need to keep track of the maximum here because your are updating it in
+	    // the next line of the code.
 	    int max_ending_prev = max_ending;
 
 	    // update the maximum product ending at the current index

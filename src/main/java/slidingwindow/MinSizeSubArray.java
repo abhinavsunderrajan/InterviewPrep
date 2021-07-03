@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * {@link https://leetcode.com/problems/minimum-size-subarray-sum/submissions/}
  * 
- * This is a two pinter technique, the running sum is a pointer of sorts and
+ * This is a two pointer technique, the running sum is a pointer of sorts and
  * notice that both pointers start at the very beginning.
  * 
  * @author 746310

@@ -43,11 +43,11 @@ public class AverageOfLevels {
 	    Queue<Node<Integer>> temp = new LinkedList<>();
 	    while (!q.isEmpty()) {
 		Node<Integer> n = q.poll();
-		sum += n.key;
+		sum += n.val;
 		count++;
-		if (n.left != null && n.left.key != null)
+		if (n.left != null && n.left.val != null)
 		    temp.add(n.left);
-		if (n.right != null && n.right.key != null)
+		if (n.right != null && n.right.val != null)
 		    temp.add(n.right);
 	    }
 	    q = temp;

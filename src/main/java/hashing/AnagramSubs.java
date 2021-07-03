@@ -13,8 +13,7 @@ import java.util.Map;
 public class AnagramSubs {
 
     public static void main(String[] args) {
-	int ans = sherlockAndAnagrams(
-		"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+	int ans = sherlockAndAnagrams("mom");
 	System.out.println(ans);
 
     }
@@ -29,11 +28,7 @@ public class AnagramSubs {
 		char[] subsArr = subs.toCharArray();
 		Arrays.sort(subsArr);
 		subs = new String(subsArr);
-		if (subCount.containsKey(subs)) {
-		    subCount.put(subs, subCount.get(subs) + 1);
-		} else {
-		    subCount.put(subs, 1);
-		}
+		subCount.put(subs, subCount.getOrDefault(subs, 0) + 1);
 	    }
 
 	}

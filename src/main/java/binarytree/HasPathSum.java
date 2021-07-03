@@ -20,7 +20,7 @@ public class HasPathSum {
 	    return (targetSum == 0);
 	} else {
 	    boolean ans = false;
-	    int subSum = targetSum - root.key;
+	    int subSum = targetSum - root.val;
 
 	    /* If we reach a leaf node and sum becomes 0 then return true */
 	    if (subSum == 0 && root.left == null && root.right == null)

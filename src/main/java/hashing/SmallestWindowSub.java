@@ -26,16 +26,8 @@ public class SmallestWindowSub {
 	int right = left + p.length();
 
 	Map<Character, Integer> patMap = new HashMap<>();
-	for (Character c : p.toCharArray()) {
-	    if (patMap.containsKey(c)) {
-		int count = patMap.get(c);
-		patMap.put(c, count + 1);
-
-	    } else {
-		patMap.put(c, 1);
-	    }
-
-	}
+	for (Character c : p.toCharArray())
+	    patMap.put(c, patMap.getOrDefault(c, 0) + 1);
 
 	if (!containsPattern(s, patMap))
 	    return "-1";
@@ -63,16 +55,8 @@ public class SmallestWindowSub {
     private static boolean containsPattern(String subsString, Map<Character, Integer> patMap) {
 
 	Map<Character, Integer> subMap = new HashMap<>();
-	for (Character c : subsString.toCharArray()) {
-	    if (subMap.containsKey(c)) {
-		int count = subMap.get(c);
-		subMap.put(c, count + 1);
-
-	    } else {
-		subMap.put(c, 1);
-	    }
-
-	}
+	for (Character c : subsString.toCharArray())
+	    subMap.put(c, subMap.getOrDefault(c, 0) + 1);
 
 	for (Character c : patMap.keySet()) {
 	    if (!subMap.containsKey(c) || patMap.get(c) > subMap.get(c))

@@ -1,5 +1,11 @@
 package backtracking;
 
+/**
+ * Great explanation from geeks to geeks.
+ * 
+ * @author 746310
+ *
+ */
 public class NQueens {
 
     /*

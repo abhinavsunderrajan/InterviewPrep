@@ -10,18 +10,19 @@ public class WordSearch {
 
     public static void main(String[] args) {
 	char[][] board = { { 'A', 'B', 'C', 'E' }, { 'S', 'F', 'C', 'S' }, { 'A', 'D', 'E', 'E' } };
-	String word = "ABCCED";
+	String word = "SEE";
 	System.out.println(exist(board, word));
 
     }
 
     private static boolean exist(char[][] board, String word) {
-	int m = board.length;
-	int n = board[0].length;
+	int row = board.length;
+	int col = board[0].length;
 
 	boolean result = false;
-	for (int i = 0; i < m; i++) {
-	    for (int j = 0; j < n; j++) {
+	for (int i = 0; i < row; i++) {
+	    for (int j = 0; j < col; j++) {
+		// start checking from the 1st character or the 0th index
 		if (dfs(board, word, i, j, 0)) {
 		    result = true;
 		}
@@ -31,24 +32,25 @@ public class WordSearch {
 	return result;
     }
 
-    private static boolean dfs(char[][] board, String word, int i, int j, int k) {
+    private static boolean dfs(char[][] board, String word, int row, int col, int wordIndex) {
 	int m = board.length;
 	int n = board[0].length;
 
-	if (i < 0 || j < 0 || i >= m || j >= n) {
+	if (row < 0 || col < 0 || row >= m || col >= n) {
 	    return false;
 	}
 
-	if (board[i][j] == word.charAt(k)) {
-	    char temp = board[i][j];
-	    board[i][j] = '#';
-	    if (k == word.length() - 1) {
+	if (board[row][col] == word.charAt(wordIndex)) {
+	    // cannot reuse the same character again.
+	    char temp = board[row][col];
+	    board[row][col] = '#';
+	    if (wordIndex == word.length() - 1) {
 		return true;
-	    } else if (dfs(board, word, i - 1, j, k + 1) || dfs(board, word, i + 1, j, k + 1)
-		    || dfs(board, word, i, j - 1, k + 1) || dfs(board, word, i, j + 1, k + 1)) {
+	    } else if (dfs(board, word, row - 1, col, wordIndex + 1) || dfs(board, word, row + 1, col, wordIndex + 1)
+		    || dfs(board, word, row, col - 1, wordIndex + 1) || dfs(board, word, row, col + 1, wordIndex + 1)) {
 		return true;
 	    }
-	    board[i][j] = temp;
+	    board[row][col] = temp;
 	}
 
 	return false;
