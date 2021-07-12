@@ -16,6 +16,7 @@ public class CoinsNumfWaysToMakeAmount {
 
     public static void main(String[] args) {
 	System.out.println(solution1Drr());
+	System.out.println("==========================");
 	System.out.println(solution2DArr());
     }
 
@@ -29,7 +30,6 @@ public class CoinsNumfWaysToMakeAmount {
 	int[][] dpArr = new int[COINS.length][TOTAL_AMOUNT + 1];
 	for (int i = 0; i < COINS.length; i++) {
 	    for (int amount = 0; amount <= TOTAL_AMOUNT; amount++) {
-		int coin = COINS[i];
 		if (amount == 0) {
 		    // if the amount is zero then don't use the coin hence
 		    dpArr[i][amount] = 1;
@@ -38,12 +38,17 @@ public class CoinsNumfWaysToMakeAmount {
 		if (amount < COINS[0])
 		    dpArr[i][amount] = 0;
 		else {
+		    // withoutCoin number of ways to make the amount without making use of the coin
+		    // in consideration
+
+		    // withCoin represents the number of ways to make amount using the coin in
+		    // consideration.
 		    int withoutCoin = 0;
 		    if (i - 1 >= 0)
 			withoutCoin = dpArr[i - 1][amount];
 		    int withCoin = 0;
-		    if (amount >= coin)
-			withCoin = dpArr[i][(amount - coin)];
+		    if (amount >= COINS[i])
+			withCoin = dpArr[i][(amount - COINS[i])];
 		    dpArr[i][amount] = withoutCoin + withCoin;
 		}
 
@@ -73,7 +78,7 @@ public class CoinsNumfWaysToMakeAmount {
 		if (coin <= amount) {
 		    // Update the ways array
 		    // for example if amount is 6 and coin considered is 5
-		    // numWays for 6 = numWays for 5 + numWays for 1
+		    // numWays for 6 = numWays for 5 + numWays for 6
 		    dpArr[amount] += dpArr[(amount - coin)];
 		}
 	    }

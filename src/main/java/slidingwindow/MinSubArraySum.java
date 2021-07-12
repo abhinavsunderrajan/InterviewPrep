@@ -24,7 +24,7 @@ public class MinSubArraySum {
 	for (int i = 0; i < nums.length; i++) {
 	    runSum += nums[i];
 	    while (runSum >= target) {
-		// System.out.println(left+" "+i+" "+runSum);
+		// System.out.println(left + " " + i + " " + runSum);
 		minSub = Math.min(minSub, i + 1 - left);
 		runSum = runSum - nums[left];
 		left++;

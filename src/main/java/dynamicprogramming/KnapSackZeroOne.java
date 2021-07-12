@@ -12,7 +12,7 @@ import java.util.Arrays;
 public class KnapSackZeroOne {
 
     private static final int[] weights = { 5, 3, 4, 2 };
-    private static final int[] profits = { 60, 50, 70, 30 };
+    private static final int[] profits = { 60, 50, 90, 30 };
     private static final int MAX_WEIGHT = 5;
 
     public static void main(String[] args) {
@@ -20,30 +20,32 @@ public class KnapSackZeroOne {
 	int profitArray[][] = new int[numItems][MAX_WEIGHT + 1];
 	for (int item = 0; item < numItems; item++) {
 	    System.out.println("Include item: " + (item + 1));
-	    for (int maxWeight = 0; maxWeight <= MAX_WEIGHT; maxWeight++) {
+	    for (int weight = 0; weight <= MAX_WEIGHT; weight++) {
 		// if max weight is 0 then you cannot add any item hence profit is 0
-		if (maxWeight == 0)
+		if (weight == 0)
 		    continue;
 		// If the weight of the item is greater than the max allowable weight cannot
-		// include that item, look for previous solutions exclusing this current weight.
-		if (weights[item] > maxWeight) {
+		// include that item, look for previous solutions excluding this current weight.
+		if (weights[item] > weight) {
 		    // If you are considering the first item then you cannot go to a negative index
 		    if (item == 0)
-			profitArray[item][maxWeight] = 0;
+			profitArray[item][weight] = 0;
 		    else
-			profitArray[item][maxWeight] = profitArray[item - 1][maxWeight];
+			profitArray[item][weight] = profitArray[item - 1][weight];
 
 		} else {
 		    if (item == 0)
-			profitArray[item][maxWeight] = profits[item];
+			profitArray[0][weight] = profits[0];
 		    else {
 
-			int itemExclude = profitArray[item - 1][maxWeight];
-			int weightIndex = maxWeight - weights[item];
-			int itemInclude = profits[item];
+			int excludeProfit = profitArray[item - 1][weight];
+			int weightIndex = weight - weights[item];
+			// include the item and get the profit for the weight remaining remaining
+			// subject to the max weight constraint
+			int includeProfit = profits[item];
 			if (weightIndex >= 0)
-			    itemInclude += profitArray[item - 1][weightIndex];
-			profitArray[item][maxWeight] = Math.max(itemExclude, itemInclude);
+			    includeProfit += profitArray[item - 1][weightIndex];
+			profitArray[item][weight] = Math.max(excludeProfit, includeProfit);
 
 		    }
 		}

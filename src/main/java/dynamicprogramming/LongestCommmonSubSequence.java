@@ -11,8 +11,8 @@ public class LongestCommmonSubSequence {
     private static String s2 = "AEDFHR";
 
     public static void main(String[] args) {
-	int cache[][] = new int[s1.length() + 1][s2.length() + 1];
-	int longest = lcs(s1.toCharArray(), s2.toCharArray(), cache, 0, 0);
+	int dpTable[][] = new int[s1.length() + 1][s2.length() + 1];
+	int longest = lcs(s1.toCharArray(), s2.toCharArray(), dpTable, 0, 0);
 	System.out.println(longest);
 
     }

@@ -20,7 +20,7 @@ public class AverageOfLevels {
 	Integer[] arr = { 3, 1, 5, 0, 2, 4, 6 };
 	for (Integer i : arr)
 	    bt.insert(i);
-	bt.traverseAndPrintDFS(bt.getRoot());
+	bt.traverseAndPrintBFS();
 	System.out.println("");
 	System.out.println(averageOfLevels(bt.getRoot()));
 
